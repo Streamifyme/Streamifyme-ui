@@ -1,1 +1,3 @@
-# Streamifyme-ui
+# StreamifyMe-ui
+
+User Interface for StreamifyMe
