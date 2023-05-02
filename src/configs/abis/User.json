@@ -5,21 +5,38 @@
       "inputs": [
         {
           "internalType": "address",
-          "name": "_address",
+          "name": "_employeeAddress",
           "type": "address"
-        }
-      ],
-      "name": "getUserName",
-      "outputs": [
+        },
         {
           "internalType": "string",
-          "name": "username",
+          "name": "_employeeName",
           "type": "string"
         }
       ],
-      "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "name": "addEmployee",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint8",
+          "name": "_courseId",
+          "type": "uint8"
+        }
+      ],
+      "name": "completeCourse",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "courseUrl",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
     },
     {
       "inputs": [
@@ -62,6 +79,32 @@
     {
       "inputs": [
         {
+          "internalType": "string",
+          "name": "username",
+          "type": "string"
+        }
+      ],
+      "name": "createEmployer",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_employeeAddress",
+          "type": "address"
+        }
+      ],
+      "name": "deleteEmployee",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
           "internalType": "uint8",
           "name": "courseID",
           "type": "uint8"
@@ -76,120 +119,7 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
-    },
-    {
-      "inputs": [],
-      "name": "fetchCourses",
-      "outputs": [
-        {
-          "components": [
-            {
-              "internalType": "uint8",
-              "name": "id",
-              "type": "uint8"
-            },
-            {
-              "internalType": "string",
-              "name": "name",
-              "type": "string"
-            },
-            {
-              "internalType": "string",
-              "name": "desc",
-              "type": "string"
-            },
-            {
-              "internalType": "address",
-              "name": "owner",
-              "type": "address"
-            },
-            {
-              "internalType": "string",
-              "name": "url",
-              "type": "string"
-            },
-            {
-              "internalType": "uint8",
-              "name": "bounty",
-              "type": "uint8"
-            },
-            {
-              "internalType": "string",
-              "name": "cid",
-              "type": "string"
-            },
-            {
-              "internalType": "string",
-              "name": "ipfsURL",
-              "type": "string"
-            }
-          ],
-          "internalType": "struct User.Course[]",
-          "name": "courseList",
-          "type": "tuple[]"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function",
-      "constant": true
-    },
-    {
-      "inputs": [],
-      "name": "fetchIncompleteCourses",
-      "outputs": [
-        {
-          "components": [
-            {
-              "internalType": "uint8",
-              "name": "id",
-              "type": "uint8"
-            },
-            {
-              "internalType": "string",
-              "name": "name",
-              "type": "string"
-            },
-            {
-              "internalType": "string",
-              "name": "desc",
-              "type": "string"
-            },
-            {
-              "internalType": "address",
-              "name": "owner",
-              "type": "address"
-            },
-            {
-              "internalType": "string",
-              "name": "url",
-              "type": "string"
-            },
-            {
-              "internalType": "uint8",
-              "name": "bounty",
-              "type": "uint8"
-            },
-            {
-              "internalType": "string",
-              "name": "cid",
-              "type": "string"
-            },
-            {
-              "internalType": "string",
-              "name": "ipfsURL",
-              "type": "string"
-            }
-          ],
-          "internalType": "struct User.Course[]",
-          "name": "",
-          "type": "tuple[]"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -244,87 +174,62 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint8",
-          "name": "_courseId",
-          "type": "uint8"
-        }
-      ],
-      "name": "completeCourse",
-      "outputs": [
-        {
-          "internalType": "string",
-          "name": "courseUrl",
-          "type": "string"
-        }
-      ],
-      "stateMutability": "nonpayable",
       "type": "function"
     },
     {
-      "inputs": [
-        {
-          "internalType": "uint8",
-          "name": "_courseId",
-          "type": "uint8"
-        }
-      ],
-      "name": "getCourseStatus",
+      "inputs": [],
+      "name": "fetchCourses",
       "outputs": [
         {
-          "internalType": "string",
-          "name": "courseStatus",
-          "type": "string"
+          "components": [
+            {
+              "internalType": "uint8",
+              "name": "id",
+              "type": "uint8"
+            },
+            {
+              "internalType": "string",
+              "name": "name",
+              "type": "string"
+            },
+            {
+              "internalType": "string",
+              "name": "desc",
+              "type": "string"
+            },
+            {
+              "internalType": "address",
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "internalType": "string",
+              "name": "url",
+              "type": "string"
+            },
+            {
+              "internalType": "uint8",
+              "name": "bounty",
+              "type": "uint8"
+            },
+            {
+              "internalType": "string",
+              "name": "cid",
+              "type": "string"
+            },
+            {
+              "internalType": "string",
+              "name": "ipfsURL",
+              "type": "string"
+            }
+          ],
+          "internalType": "struct User.Course[]",
+          "name": "courseList",
+          "type": "tuple[]"
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "_employeeAddress",
-          "type": "address"
-        }
-      ],
-      "name": "getTotalCourseBountyValue",
-      "outputs": [
-        {
-          "internalType": "uint8",
-          "name": "totalBountyValue",
-          "type": "uint8"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function",
-      "constant": true
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "user",
-          "type": "address"
-        }
-      ],
-      "name": "getUserType",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -364,8 +269,81 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "fetchIncompleteCourses",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint8",
+              "name": "id",
+              "type": "uint8"
+            },
+            {
+              "internalType": "string",
+              "name": "name",
+              "type": "string"
+            },
+            {
+              "internalType": "string",
+              "name": "desc",
+              "type": "string"
+            },
+            {
+              "internalType": "address",
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "internalType": "string",
+              "name": "url",
+              "type": "string"
+            },
+            {
+              "internalType": "uint8",
+              "name": "bounty",
+              "type": "uint8"
+            },
+            {
+              "internalType": "string",
+              "name": "cid",
+              "type": "string"
+            },
+            {
+              "internalType": "string",
+              "name": "ipfsURL",
+              "type": "string"
+            }
+          ],
+          "internalType": "struct User.Course[]",
+          "name": "",
+          "type": "tuple[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint8",
+          "name": "_courseId",
+          "type": "uint8"
+        }
+      ],
+      "name": "getCourseStatus",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "courseStatus",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
     },
     {
       "inputs": [
@@ -375,101 +353,53 @@
           "type": "address"
         }
       ],
-      "name": "deleteEmployee",
-      "outputs": [],
-      "stateMutability": "nonpayable",
+      "name": "getTotalCourseBountyValue",
+      "outputs": [
+        {
+          "internalType": "uint8",
+          "name": "totalBountyValue",
+          "type": "uint8"
+        }
+      ],
+      "stateMutability": "view",
       "type": "function"
     },
     {
       "inputs": [
+        {
+          "internalType": "address",
+          "name": "_address",
+          "type": "address"
+        }
+      ],
+      "name": "getUserName",
+      "outputs": [
         {
           "internalType": "string",
           "name": "username",
           "type": "string"
         }
       ],
-      "name": "createEmployer",
-      "outputs": [],
-      "stateMutability": "nonpayable",
+      "stateMutability": "view",
       "type": "function"
     },
     {
       "inputs": [
         {
           "internalType": "address",
-          "name": "_employeeAddress",
-          "type": "address"
-        },
-        {
-          "internalType": "string",
-          "name": "_employeeName",
-          "type": "string"
-        }
-      ],
-      "name": "addEmployee",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "_employeeAddress",
+          "name": "user",
           "type": "address"
         }
       ],
-      "name": "changeAccess",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "getTopPerformers",
+      "name": "getUserType",
       "outputs": [
         {
-          "components": [
-            {
-              "internalType": "address",
-              "name": "_address",
-              "type": "address"
-            },
-            {
-              "internalType": "string",
-              "name": "username",
-              "type": "string"
-            },
-            {
-              "internalType": "enum User.Access",
-              "name": "access",
-              "type": "uint8"
-            },
-            {
-              "internalType": "uint8",
-              "name": "_totalBounty",
-              "type": "uint8"
-            },
-            {
-              "internalType": "bool",
-              "name": "_isActive",
-              "type": "bool"
-            }
-          ],
-          "internalType": "struct User.Employee[]",
+          "internalType": "uint256",
           "name": "",
-          "type": "tuple[]"
+          "type": "uint256"
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
-    },
-    {
-      "inputs": [],
-      "name": "loadTestData",
-      "outputs": [],
-      "stateMutability": "nonpayable",
       "type": "function"
     }
   ],
@@ -56002,7 +55932,7 @@
     "80001": {
       "events": {},
       "links": {},
-      "address": "0x41810ea34aA8208cF0D8B6CD779582e6e70fBb89",
+      "address": "0xC6017364238dd16076Fd5b12201187ae040Efb24",
       "transactionHash": "0x24f22b06481928488ef1af6081793711fa1e503d39852a6d078b5609b7f8f1a1"
     }
   },

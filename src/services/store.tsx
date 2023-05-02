@@ -4,7 +4,8 @@ import React from "react";
 import USER_ABI from "../configs/abis/User.json";
 
 //Contract address of User.sol(kalvi-core) deployed at Polygon Mumbai
-const CONTRACT_ADDRESS = "0x41810ea34aA8208cF0D8B6CD779582e6e70fBb89";
+//const CONTRACT_ADDRESS = "0x41810ea34aA8208cF0D8B6CD779582e6e70fBb89";
+const CONTRACT_ADDRESS = "0xC6017364238dd16076Fd5b12201187ae040Efb24";
 
 export enum UserType {
   SPONSOR = 1,
